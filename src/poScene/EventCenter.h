@@ -146,8 +146,10 @@ namespace po
 				std::map<EventTypeT, std::vector<CiEventT> > mQueue;
 		};
 
-
-
+#if defined( __clang__ )
+   #pragma clang diagnostic push
+   #pragma clang diagnostic ignored "-Wswitch"
+#endif
 
 		//------------------------------------
 		//	Mouse Events
@@ -258,6 +260,10 @@ namespace po
 
 				ci::signals::ConnectionList	mConnections;
 		};
+
+#if defined( __clang__ )
+   #pragma clang diagnostic pop
+#endif
 
 	}
 } //	namespace po::scene

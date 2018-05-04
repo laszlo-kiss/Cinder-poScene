@@ -43,8 +43,8 @@ namespace po
 				protected:
 					ScrollView();
 
-					void setup();
-					void update();
+					void setup() override;
+					void update() override;
 
 					bool mInitialized;
 

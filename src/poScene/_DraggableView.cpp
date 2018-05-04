@@ -159,6 +159,11 @@ namespace po
 			}
 		}
 
+#if defined( __clang__ )
+   #pragma clang diagnostic push
+   #pragma clang diagnostic ignored "-Wswitch"
+#endif
+
 		void DraggableView::mouseEventHandler( po::scene::MouseEvent& event )
 		{
 			switch( event.getType() ) {
@@ -198,5 +203,8 @@ namespace po
 					break;
 			}
 		}
+#if defined( __clang__ )
+   #pragma clang diagnostic pop
+#endif
 	}
 }
